@@ -1,0 +1,6 @@
+queues:
+# - {name: "test_queue_1", call_back_url: "http://127.0.0.1/consumer/api1",read_timeout: 20,retry_times: 5}
+# - {name: "test_queue_2", call_back_url: "http://127.0.0.1/consumer/api2",read_timeout: 2,retry_times: 5}
+ - {name: "test_queue_3", call_back_url: "http://127.0.0.1/consumer/api3",read_timeout: 2,retry_times: 5}
+# - {name: "test_queue_4", call_back_url: "http://127.0.0.1/consumer/api4",read_timeout: 20,retry_times: 5}
+# - {name: "test_queue_5", call_back_url: "http://127.0.0.1/consumer/api5",read_timeout: 20,retry_times: 5}
