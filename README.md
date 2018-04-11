@@ -1,7 +1,3 @@
-# go-rabbitmq-dispatcher
-
-A simple rabbitmq message dispatcher writen in golang
-
 # Why user it?
 
 - 针对各类语言的consumser,开发者不需要关心消息的出错/重练/ack/reject等
