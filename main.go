@@ -177,12 +177,16 @@ func receive(conf *Queuesconf, envconf *EnvConfig, done chan interface{}) chan M
 		for {
 			channel, err := getChannel(envconf.AmqpUrl)
 			if err != nil {
-				panic(err)
+				ERROR("get channel failed:%s,reconnect!",err)
+				time.Sleep(1 * time.Second)
+				continue reconnect
 			}
 			delivery, err := channel.Consume(
 				queueConfig.Name, "", false, false, false, false, nil)
 			if err != nil {
-				panic(err)
+				ERROR("consumerfailed:%s,reconnect!",err)
+				time.Sleep(1 * time.Second)
+				continue reconnect
 			}
 
 			for {
