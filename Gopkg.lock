@@ -14,16 +14,22 @@
   revision = "f242e2999868dcd267a2b86e49ce1f9cf9e15b16"
 
 [[projects]]
-  name = "github.com/natefinch/lumberjack"
-  packages = ["."]
-  revision = "a96e63847dc3c67d17befa69c303767e2f84e54f"
-  version = "v2.1"
-
-[[projects]]
   branch = "master"
   name = "github.com/streadway/amqp"
   packages = ["."]
-  revision = "8e4aba63da9fc5571e01c6a45dc809a58cbc5a68"
+  revision = "70e15c650864f4fc47f5d3c82ea117285480895d"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/zt3862266/go"
+  packages = ["log"]
+  revision = "15f50a35365bd6bb0bfa901aec6cd2e9cf681c2a"
+
+[[projects]]
+  name = "gopkg.in/natefinch/lumberjack.v2"
+  packages = ["."]
+  revision = "a96e63847dc3c67d17befa69c303767e2f84e54f"
+  version = "v2.1"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"
@@ -34,6 +40,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "60e8825ffd8cd671fa3cc6e6ed7b4b5e517e7f29ab4daa717eb280a3769de947"
+  inputs-digest = "e10b158273a57226be929f3dd15dd834384f31907a5e6bc08f99a3d5d519493c"
   solver-name = "gps-cdcl"
   solver-version = 1
