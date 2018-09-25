@@ -16,7 +16,7 @@ type QueueConfig struct {
 	RetryTimes  int    `yaml:"retry_times"`
 }
 type EnvConfig struct {
-	AmqpUrl string `yaml:"amqp_url"`
+	AmqpUrl []string `yaml:"amqp_url"`
 }
 
 func LoadAppConfig(configFile string) *Queuesconf {

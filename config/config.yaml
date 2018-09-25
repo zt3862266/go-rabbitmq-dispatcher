@@ -1,1 +1,3 @@
-amqp_url: "amqp://rdguest:Grong@online@10.12.33.238:5672/"
+amqp_url:
+  - "amqp://rdguest:Grong@online@10.12.33.238:56720/"
+  - "amqp://rdguest:Grong@online@10.12.33.239:5672/"

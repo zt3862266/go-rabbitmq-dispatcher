@@ -12,7 +12,8 @@ import (
 	"sync"
 	"time"
 	. "github.com/zt3862266/go/log"
-	)
+	"errors"
+)
 
 const (
 	receiveBufferLength     = 1000
@@ -83,21 +84,24 @@ func myexit(msg string) {
 	os.Exit(1)
 }
 
-func getChannel(amqpUrl string) (*amqp.Channel, error) {
-
-	conn, err := amqp.Dial(amqpUrl)
-	if err != nil {
-		Error("get conn failed:%s", err)
-		return nil, err
+func getChannel(amqpUrl []string) (*amqp.Channel, error) {
+	for _,url := range amqpUrl{
+		conn, err := amqp.Dial(url)
+		if err != nil {
+			Error("get conn url:%s failed:%s", url, err)
+			time.Sleep(time.Second * 2)
+			continue
+		}
+		channel, err := conn.Channel()
+		channel.Qos(consumerQosPrefetchSize, 0, false)
+		if err != nil {
+			Error("get channel failed:%s", err)
+			return nil, err
+		}
+		return channel, nil
 	}
-	channel, err := conn.Channel()
-	channel.Qos(consumerQosPrefetchSize, 0, false)
-	if err != nil {
-		Error("get channel failed:%s", err)
-		return nil, err
-	}
+	return nil, errors.New("maxretry exceed,can not connnect!")
 
-	return channel, nil
 }
 
 func newHttpClient(maxIdleConns, maxIdleConnsPerHost, idleConnTimeout int) *http.Client {
@@ -234,7 +238,7 @@ func receive(conf *Queuesconf, envconf *EnvConfig, done chan interface{}) chan M
 		Info("all receive gorouting is done")
 
 	}()
-
+	Info("service start")
 	return out
 }
 
@@ -258,7 +262,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, usage)
 	}
 	flag.StringVar(&configFile, "c", "config/queue.yaml", "")
-	flag.StringVar(&logFile, "l", "/home/rong/www/logs/grd.log", "")
+	flag.StringVar(&logFile, "l", "/home/rong/www/log/grd.log", "")
 	flag.Parse()
 
 	if configFile == "" {
