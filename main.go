@@ -96,7 +96,7 @@ func getChannel(amqpUrl []string) (*amqp.Channel, error) {
 		channel.Qos(consumerQosPrefetchSize, 0, false)
 		if err != nil {
 			Error("get channel failed:%s", err)
-			return nil, err
+			continue
 		}
 		return channel, nil
 	}
