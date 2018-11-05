@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd ..
 echo "start new process ..."
 ps=`ps -ef | grep go-rabbitmq-dispatcher | grep -v grep -c`
 if [ $ps -gt 0 ];then
