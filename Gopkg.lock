@@ -3,43 +3,60 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:c183111eaf02a9e6bb39c213bdfb5472b16f1955dd4c9dab82db83f114c64a63"
   name = "github.com/facebookgo/atomicfile"
   packages = ["."]
+  pruneopts = "UT"
   revision = "2de1f203e7d5e386a6833233882782932729f27e"
 
 [[projects]]
   branch = "master"
+  digest = "1:b0b75ab0829ae3769f1f221486da0c40c8dc0680fb93d072b5df5a39d56c996c"
   name = "github.com/facebookgo/pidfile"
   packages = ["."]
+  pruneopts = "UT"
   revision = "f242e2999868dcd267a2b86e49ce1f9cf9e15b16"
 
 [[projects]]
   branch = "master"
+  digest = "1:68284c262f45718a220f7e817c2125a0f20eb3924be5074fa187ff7bc600c47e"
   name = "github.com/streadway/amqp"
   packages = ["."]
-  revision = "70e15c650864f4fc47f5d3c82ea117285480895d"
+  pruneopts = "UT"
+  revision = "27835f1a64e97101d95306211f03c0620ffa295d"
 
 [[projects]]
   branch = "master"
+  digest = "1:bea62f54e4c0d21d6e6729c6389efb46ce2730aa2b715004578f324938548237"
   name = "github.com/zt3862266/go"
   packages = ["log"]
-  revision = "15f50a35365bd6bb0bfa901aec6cd2e9cf681c2a"
+  pruneopts = "UT"
+  revision = "4aaba8fecb9f59d5e932fb130492e2e40676c669"
 
 [[projects]]
+  digest = "1:c805e517269b0ba4c21ded5836019ed7d16953d4026cb7d00041d039c7906be9"
   name = "gopkg.in/natefinch/lumberjack.v2"
   packages = ["."]
+  pruneopts = "UT"
   revision = "a96e63847dc3c67d17befa69c303767e2f84e54f"
   version = "v2.1"
 
 [[projects]]
+  digest = "1:4d2e5a73dc1500038e504a8d78b986630e3626dc027bc030ba5c75da257cdb96"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "5420a8b6744d3b0345ab293f6fcba19c978f1183"
-  version = "v2.2.1"
+  pruneopts = "UT"
+  revision = "51d6538a90f86fe93ac480b35f37b2be17fef232"
+  version = "v2.2.2"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "e10b158273a57226be929f3dd15dd834384f31907a5e6bc08f99a3d5d519493c"
+  input-imports = [
+    "github.com/facebookgo/pidfile",
+    "github.com/streadway/amqp",
+    "github.com/zt3862266/go/log",
+    "gopkg.in/yaml.v2",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
