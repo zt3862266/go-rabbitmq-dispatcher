@@ -29,7 +29,7 @@ func TestPub(t *testing.T){
 					Headers:amqp.Table{},
 					ContentType:"text/plain",
 					ContentEncoding:"",
-					Body: []byte("你好,世界人民大和平"),
+					Body: []byte("你好,世界人民大和平!"),
 					DeliveryMode:amqp.Persistent,
 					Priority:0,
 				},
