@@ -1,6 +1,6 @@
 queues:
 # - {name: "test_queue_1", call_back_url: "http://127.0.0.1/consumer/api1",read_timeout: 20,retry_times: 5}
 # - {name: "test_queue_2", call_back_url: "http://127.0.0.1/consumer/api2",read_timeout: 2,retry_times: 5}
- - {name: "mq-test", call_back_url: "http://wd.rong360.com/site/test2",read_timeout: 2,retry_times: 5}
+ - {name: "mq-test", call_back_url: "http://127.0.0.1/site/test2",read_timeout: 2,retry_times: 5}
 # - {name: "test_queue_4", call_back_url: "http://127.0.0.1/consumer/api4",read_timeout: 20,retry_times: 5}
-# - {name: "test_queue_5", http://wd.rong360.com/site/test2call_back_url: "http://127.0.0.1/consumer/api5",read_timeout: 20,retry_times: 5}
+# - {name: "test_queue_5", http://127.0.0.1/site/test2call_back_url: "http://127.0.0.1/consumer/api5",read_timeout: 20,retry_times: 5}
